@@ -1,0 +1,117 @@
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --text-main: #ffffff;
+    --accent-blue: #0088cc;
+    --accent-green: #25d366;
+    --accent-github: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top right, #1e293b, #0f172a);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Subtle Animated Glow */
+.glow-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1), transparent 50%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.card {
+    width: 100%;
+    max-width: 420px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 28px;
+    padding: 40px 24px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.avatar {
+    width: 85px;
+    height: 85px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    border-radius: 24px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    transform: rotate(-5deg);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+h1 { font-size: 1.6rem; margin-bottom: 8px; font-weight: 700; }
+.handle { color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; margin-bottom: 32px; }
+
+.links-container {
+    display: grid;
+    gap: 12px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn i {
+    width: 30px;
+    font-size: 1.3rem;
+    margin-right: 12px;
+    text-align: center;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateX(5px);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Platform Specific Brand Colors on Hover */
+.btn-github:hover { border-color: #f0f6fc; color: #f0f6fc; }
+.btn-telegram:hover { border-color: #0088cc; color: #0088cc; }
+.btn-whatsapp:hover { border-color: #25d366; color: #25d366; }
+.btn-youtube:hover { border-color: #ff0000; color: #ff0000; }
+
+.footer {
+    margin-top: 35px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 1px;
+}
